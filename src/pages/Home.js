@@ -6,6 +6,7 @@ const Home = () => {
 
     const [ getError, getFetchError ] = useState(null);
     const [ allJuice, setJuice ] = useState(null);
+    const [orderBy, setOrderBy] = useState('created_at')
 
     const handleDelete = (id) => {
       setJuice(prevJuice => {
@@ -18,6 +19,7 @@ const Home = () => {
         const { data, error } = await supabase
         .from('Juice')
         .select()
+        .order(orderBy, {ascending: false})
         
         if(error) {
             getFetchError('No Juice')
@@ -31,7 +33,7 @@ const Home = () => {
         }
 
         fetchJuiceData()
-    }, [])
+    }, [orderBy])
 
   return (
     <div className="page home">
@@ -39,6 +41,12 @@ const Home = () => {
 
        {allJuice && (
         <div className='juice'>
+          <div className="order-by">
+            <p>Order by:</p>
+            <button onClick={() => setOrderBy('created_at')}>Time Created</button>
+            <button onClick={() => setOrderBy('title')}>Title</button>
+            <button onClick={() => setOrderBy('ratings')}>Rating</button>
+          </div>
           <div className='juice-grid'>
             {allJuice.map(juice => (
                 <JuiceCard 
