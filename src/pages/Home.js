@@ -16,13 +16,11 @@ const Home = () => {
         if(error) {
             getFetchError('No Juice')
             setJuice(null)
-            console.log(error)
         }
 
         if (data) {
             setJuice(data)
             getFetchError(null)
-            console.log(data)
         }
         }
 
