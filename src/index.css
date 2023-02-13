@@ -89,17 +89,29 @@ form button {
 }
 
 .juice-card .buttons {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.juice-card pencil {
-  color: #bbb;
-  margin-left: 10px;
-  font-size: 1.2em;
-  padding: 6px;
-  background: #75e619;
-  border-radius: 50%;
-  cursor: pointer;
+.trash {
+  background: #e8e6eb;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.pencil {
+  background: #e8e6eb;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.trash:hover {
+  background: #d9d7db;
+}
+
+.pencil:hover {
+  background: #d9d7db;
 }
 
 .error {
