@@ -14,7 +14,7 @@ const Create = () => {
         e.preventDefault()
 
         if (!title || !method || !ratings ) {
-           setError('please fill out the form')
+           setError('please fill out all fields of the form')
            return
         }
 
@@ -24,12 +24,10 @@ const Create = () => {
         .select()
 
         if (error) {
-            setError('please fill out the form')
-            console.log(error)
+            setError('please fill out all fields of the form')
         }
 
         if (data) {
-            console.log(data)
             setError(null)
             navigate('/')
         }
