@@ -7,6 +7,12 @@ const Home = () => {
     const [ getError, getFetchError ] = useState(null);
     const [ allJuice, setJuice ] = useState(null);
 
+    const handleDelete = (id) => {
+      setJuice(prevJuice => {
+        return prevJuice.filter(j => j.id !== id)
+      })
+    }
+
     useEffect(() => {
         const fetchJuiceData = async () => {
         const { data, error } = await supabase
@@ -35,7 +41,11 @@ const Home = () => {
         <div className='juice'>
           <div className='juice-grid'>
             {allJuice.map(juice => (
-                <JuiceCard key={juice.id} juice={juice} />
+                <JuiceCard 
+                key={juice.id} 
+                juice={juice} 
+                onDelete={handleDelete}
+                />
             ))}
           </div>
         </div>
