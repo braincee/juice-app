@@ -9,8 +9,8 @@ function App() {
       <BrowserRouter>
         <nav>
           <h1>Juice Home</h1>
-          <Link to='/'>Home</Link>
-          <Link to='/create'>Create a New Juice</Link>
+          <button><Link to='/'>Home</Link></button>
+          <button><Link to='/create'>Add Juice</Link></button>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
