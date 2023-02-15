@@ -1,23 +1,21 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import Create from './pages/Create';
 import Update from './pages/Update';
+import Navbar from './pages/Navbar';
+
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <nav>
-          <h1>Juice Home</h1>
-          <button><Link to='/'>Home</Link></button>
-          <button><Link to='/create'>Add Juice</Link></button>
-        </nav>
+      <Router>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
           <Route path="/:id" element={<Update />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
