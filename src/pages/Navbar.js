@@ -15,11 +15,10 @@ const Navbar = () => {
     <nav>
     <div className='logo'>
      <img src={Logo} alt="juice"/>
+     <div><p>Juicy</p></div>
     </div>
     <div>
-      <h1>Juice Home</h1>
-      </div>
-     <div className='links'>
+    <div className='links'>
       <button><Link to='/'>Home</Link></button>
        <button><Link to='/create'>Add Juice</Link></button>
      </div>
@@ -30,7 +29,7 @@ const Navbar = () => {
        <div><AiFillCloseCircle size={40} onClick={handleNav} className='close'/></div>
        <div className='draw'>
          <div className='header'>
-          <h1>Juice Home</h1>
+          <h1>Juicy Home</h1>
          </div>
         <div>
           <button><Link to='/' onClick={() => setNav(!nav)}>Home</Link></button>
@@ -40,6 +39,7 @@ const Navbar = () => {
          </div>
         </div>
      </div>
+    </div>
   </nav>
   )
 }
